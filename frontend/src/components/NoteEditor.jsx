@@ -67,6 +67,7 @@ export default function NoteEditor({
         <div className="editor">
 
             <input
+                className="titleInput"
                 value={note.title}
                 placeholder="Title"
                 onChange={(e)=>
@@ -77,33 +78,37 @@ export default function NoteEditor({
                 }
             />
 
-            <input
-                value={note.category}
-                placeholder="Category"
-                onChange={(e)=>
-                    setNote({
-                        ...note,
-                        category:e.target.value
-                    })
-                }
-            />
+            <div className="row">
 
-            <select
-                value={note.color}
-                onChange={(e)=>
-                    setNote({
-                        ...note,
-                        color:e.target.value
-                    })
-                }
-            >
-                <option>gray</option>
-                <option>blue</option>
-                <option>green</option>
-                <option>orange</option>
-                <option>red</option>
-                <option>purple</option>
-            </select>
+                <input
+                    value={note.category}
+                    placeholder="Category"
+                    onChange={(e)=>
+                        setNote({
+                            ...note,
+                            category:e.target.value
+                        })
+                    }
+                />
+
+                <select
+                    value={note.color}
+                    onChange={(e)=>
+                        setNote({
+                            ...note,
+                            color:e.target.value
+                        })
+                    }
+                >
+                    <option>gray</option>
+                    <option>blue</option>
+                    <option>green</option>
+                    <option>orange</option>
+                    <option>red</option>
+                    <option>purple</option>
+                </select>
+
+            </div>
 
             <div className="markdown-container">
 
