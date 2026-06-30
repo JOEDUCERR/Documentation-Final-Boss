@@ -103,3 +103,40 @@ button{
     padding:15px;
     overflow:auto;
 }
+
+/* ---------- DARK MODE ---------- */
+
+.dark{
+    background:#121212;
+    color:white;
+}
+
+.dark .sidebar{
+    background:#1b1b1b;
+    border-right:1px solid #333;
+}
+
+.dark .card{
+    background:#232323;
+    color:white;
+}
+
+.dark input,
+.dark textarea,
+.dark select{
+    background:#2b2b2b;
+    color:white;
+    border:1px solid #555;
+}
+
+.dark .preview{
+    background:#1f1f1f;
+    color:white;
+    border:1px solid #444;
+}
+
+.dark button{
+    background:#333;
+    color:white;
+    border:1px solid #555;
+}

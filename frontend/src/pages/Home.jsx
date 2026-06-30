@@ -8,6 +8,10 @@ export default function Home() {
     const [notes, setNotes] = useState([]);
     const [search, setSearch] = useState("");
     const [selected, setSelected] = useState(null);
+    const [dark, setDark] = useState(() => {
+    const saved = localStorage.getItem("theme");
+        return saved ? saved === "dark" : true;
+    });
 
     async function loadNotes() {
         const res = await api.get("/notes", {
@@ -22,10 +26,22 @@ export default function Home() {
         loadNotes();
     }, [search]);
 
+    useEffect(() => {
+        localStorage.setItem(
+            "theme",
+            dark ? "dark" : "light"
+        );
+    }, [dark]);
+
     return (
-            <div className="layout">
+            <div className={dark ? "layout dark" : "layout"}>
 
         <div className="sidebar">
+            <button
+                onClick={() => setDark(!dark)}
+            >
+                {dark ? "☀ Light" : "🌙 Dark"}
+            </button>
 
             <input
                 value={search}
